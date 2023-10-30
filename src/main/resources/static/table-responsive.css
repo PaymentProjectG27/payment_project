@@ -1,0 +1,30 @@
+.table-responsive{
+    padding: 10px;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        margin-right : 1000% ;
+
+}
+.panel-body{
+    padding: 0;
+}
+:before{
+    box-sizing: border-box;
+}
+.panel {
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 25px;
+    /* border-color: #E6E8EB; */
+    position: relative;
+    margin-top: 10px;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}

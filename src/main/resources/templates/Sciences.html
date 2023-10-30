@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no,initial-scale=1.0,
+maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tweet {
+            border: 1px solid #ccc;
+            padding: 10px;
+            bottom-margin: 10px;
+        }
+        .author {
+            font-weight: bold;
+        }
+        .timestamp {
+            color: #888;
+            font-size: 12px;
+        }
+        .content {
+            margin-top: 10px;
+        }
+        button-long {
+            width: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+<table aria-describedby="datatable_info" style="width: 1141px" border="100">
+    <thead>
+    <th width="200">Fan</th>
+    <th >O'qituvchi</th>
+    <th >Davomat</th>
+    <th >Amal</th>
+    <th >Reja</th>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="forStudent:${sciencesList}">
+       <td th:text="${forStudent.getName()}"></td>
+        <td>
+
+                <a th:text="0"/>
+
+        </td>
+        <td th:text="${forStudent.getFreeLesson()}"></td>
+        <td>
+            <form action="register/amaliyot" method="post">
+                <button  type="submit">amaliyot</button>
+            </form>
+        </td>
+        <td th:text="Amaliyot"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

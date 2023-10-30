@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    {
+        border-bottom: 2px solid #dee2e6;
+        padding: 10px 0;
+    }
+</style>
+<body>
+<table  id="datatable" role="grid" aria-describedby="datatable_info" style="width: 1141px;">
+    <thead>
+    <tr role="row">
+        <th scope="col" width="250" class="sorting_desc" tabindex="0"
+            aria-controls="datatable" rowspan="1"
+            colspan="1" aria-sort="descending" aria-label="Fan: to'g'ri tartiblash"
+                       style="width: 250px;">
+        Fan</th><th scope="col" class="sorting" tabindex="0"
+                    aria-controls="datatable" rowspan="1" colspan="1"
+                    aria-label="O’qituvchi: to'g'ri tartiblash"
+                    style="width: 485px;">O’qituvchi</th>
+        <th scope="col" class="sorting" tabindex="0" aria-controls="datatable"
+            rowspan="1" colspan="1"
+            aria-label="Davomat: to'g'ri tartiblash" style="width: 97px;" >
+           Davomat
+        </th>
+        <th style="width: 100px;" rowspan="1" colspan="1">
+            Amal</th><th rowspan="1"
+                         colspan="1">Reja</th></tr>
+    </thead>
+    <tbody>
+    <tr role="row" class="odd" th:each="student:${sciencesList}">
+        <td class="sorting_1" data-label="Fan" th:text="${student.name}"></td>
+        <td data-label="O’qituvchi"  >
+            <div th:each="teacher:${student.getTeachers()}">
+            <p th:if="${teacher.getSciences().getId()==student.getId()}">
+                <span class="text-primary">SWD019</span>
+                <a  th:text="${teacher.fullname}"/>
+            </p>
+        </div></td>
+        <td data-label="Davomat">
+            <a href="/student/attendance/?subject_id=14655&amp;semester_id=37"
+               class="btn btn-default"
+               th:text="${student.getFreeLesson()}" ></a></td>
+        <td data-label="Amal">
+            <form th:action="@{/{id}(id=${student.getId()})}" method="post">
+            <button type="submit" class="fa ">-- Amaliyot</button>
+            </form>
+        </td>
+        <td data-label="Reja">
+            <form th:action="@{/{id}(id=${student.getId()})}" method="get">
+                <button type="submit"    class="btn-default" >-- Mavzu
+                </button>
+            </form>
+
+        </td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no,initial-scale=1.0,
+maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    .table-container {
+        display: table-cell;
+        justification-content: center; /* Center the table horizontally */
+        align-elements: center; /* Center the table vertically */
+    }
+
+    table {
+        limit-turn: collapse;
+        height: 0.1%;
+        width: 60%; /* Adjust width as needed */
+        /* Add other table styles as needed */
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd; /* Add border to table cells */
+    }
+
+    n {
+        background-color: #f2f2f2; /* Add background color to table headers */
+        /* Add more styles to table headers */
+    }
+</style>
+    <style>
+        .panel {
+            border: 1px solid #ddd; /* Add a border to the panel */
+            border-radius: 4px; /* Add rounded corners to the panel */
+            padding: 16px; /* Add space inside the panel */
+            background-color: #f2f2f2; /* Add a background color to the panel */
+        }
+
+        .panel-header {
+            font-weight: bold; /* Add font styles to title */
+            bottom-margin: 8px; /* Add space below the title */
+        }
+
+        .panel-body {
+            /* Add styles to the content field */
+        }
+    </style>
+    <style>
+        .panel {
+            /* Add panel styles */
+        }
+
+        .tab-container {
+            display: flex;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .tab.active {
+            background-color: #ddd;
+        }
+
+        .tab-content {
+            padding: 10px;
+        }
+    </style>
+<body>
+<table border="1" class="table-responsive"  >
+<tbody>
+<tr>
+    <td>
+        To'plangan ball
+        <br>
+        <a  class="m-b-xxs"  th:text="${sciences.accumulatedpoints}"></a>
+    </td>
+    <td>
+        Maks ball
+        <br>
+        <a class="m-b-xxs" th:text="50"></a>
+    </td>
+    <td>
+        Ozlashtirish
+        <br>
+        <a class="m-b-xxs"  th:text="${sciences.percentageoftotalscore}"></a>
+    </td>
+    <td>
+        Hozirgi bahosi
+        <br>
+        <h4  class="m-b-xxs">0</h4>
+    </td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

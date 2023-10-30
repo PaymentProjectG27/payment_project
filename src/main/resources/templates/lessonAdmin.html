@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .tweet {
+        border: 1px solid #ccc;
+        padding: 10px;
+        bottom-margin: 10px;
+    }
+    .author {
+        font-weight: bold;
+    }
+    .timestamp {
+        color: #888;
+        font-size: 12px;
+    }
+    .content {
+        margin-top: 10px;
+    }
+    button-long {
+        width: 200px;
+    }
+
+
+</style>
+<table aria-describedby="datatable_info" style="width: 1141px" border="100">
+    <thead>
+    <th width="200">Fan</th>
+    <th >O'qituvchi</th>
+    <th>Dars vaqtini kiritish</th>
+    </thead>
+
+    <tbody>
+
+    <tr th:each="teachers:${teacherList}">
+           <td th:text="${teachers.getSciences().getName()}"></td>
+           <td th:text="${teachers.getFullname()}"></td>
+           <td>
+               <form th:action="@{/admin/{id}(id=${teachers.getSciences().getId()})}" th:method="POST">
+                   <button type="submit">Time</button>
+               </form>
+           </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
