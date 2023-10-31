@@ -19,6 +19,7 @@ import java.util.List;
 @RequestMapping("/register")
 @RequiredArgsConstructor
 public class LoginController {
+
     private final StudentRepazitory studentRepazitory;
     private final TeacherRepazitory repazitory;
     private final AdminRepozitary adminrepozitary;

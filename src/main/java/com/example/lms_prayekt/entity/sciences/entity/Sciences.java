@@ -18,6 +18,7 @@ import java.util.UUID;
 public class Sciences {
     @Id
     private UUID id;
+
     private String name;
     private LocalDate date;
     private int freeLesson;

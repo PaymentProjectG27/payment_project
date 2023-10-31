@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/postgres
-    password: 123
+    url: jdbc:postgresql://localhost:5432/sardor
+    password: sardor2003
     username: postgres
   jpa:
     hibernate:
