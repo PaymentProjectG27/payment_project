@@ -1,0 +1,344 @@
+<!--Quvonch, [01.11.2023 12:40]-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Dars Jadvali</title>
+    <style>
+        table, th, td {
+            border: 0.4px solid pink;
+            cursor: pointer;
+            border-collapse: collapse;
+            height: 60px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .subjects {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            margin-top: 60px;
+            align-items: center;
+            margin-left: auto;
+            margin-left: 5%;
+            margin-right: auto;
+        }
+
+        .subject {
+            height: 100%;
+            width: 215px;
+            margin-right: 1.5%;
+
+        }
+
+        .first_d {
+            width: 5%;
+            max-height: 60px;
+        }
+
+        td {
+            text-align: left;
+            max-width: 320px;
+            width: 360px;
+        }
+
+        th {
+            height: 40px;
+            max-width: 80px;
+        }
+
+        .container_sub {
+            width: 100%;
+            height: 100%;
+            overflow-x: scroll;
+            background-color: #ffffff;
+
+        }
+
+        .week {
+            background-color: #ececf1;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 70px;
+            margin: auto;
+            height: 10px;
+            padding: 1%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            border: 0.5px solid pink;
+        }
+
+        .sub {
+            display: inline-block;
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            color: #fff;
+            padding: 1%;
+            text-align: start;
+            font-size: 14px;
+            background: #5893df;
+            border: 2px solid #3a87ad;
+            border-radius: 5px;
+        }
+
+        .week_i {
+            width: 100%;
+            height: 100%;
+        }
+
+        .week_i:focus-within {
+            background: black;
+
+        }
+
+
+        .button-30 {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .button-30:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .button-30:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-30:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="container_sub">
+
+    <form action="/register" method="get">
+        <button class="button-30" role="button">Back</button>
+    </form>
+
+
+    <div class="week">
+        <span onclick="changer(this)" class="week_i">Kun</span>
+        <span onclick="changer(this)" class="week_i">Hafta</span>
+
+    </div>
+    <table style="width:100%">
+        <div class="subjects">
+            <div class="subject">
+          <span class="sub">
+            <p>10:00</p>
+            <p>A210</p>
+            <p>Kompyuter Tarmoqlari</p>
+
+
+          </span>
+                <span class="sub">
+            <p>11:30</p>
+            <p>A210</p>
+            <p>Kompyuter Arxitekturasi</p>
+
+
+          </span>
+            </div>
+            <div style="margin-top: 15.8%;" class="subject">
+          <span style="background-color:#28a745 ;" class="sub">
+            <p>11:30:00</p>
+            <p>A200</p>
+            <p>Yashil Iqtsodyot</p>
+
+
+          </span>
+                <span style=" background-color: #28a745;" class="sub">
+            <p>13:00</p>
+            <p>A200</p>
+            <p>Yashil Iqtsodyot</p>
+
+
+          </span>
+            </div>
+            <div class="subject">
+          <span style="background-color: #dc3545;" class="sub">
+            <p>8:00</p>
+            <p>E211</p>
+            <p>Tizimlar va signallar</p>
+
+
+          </span>
+                <span style="background-color: #ffc107;" class="sub">
+            <p>10:00</p>
+            <p>E212</p>
+            <p>Tizimlar va signallar</p>
+
+
+          </span>
+                <span style="background-color:#28a745 ;" class="sub">
+            <p>11:30</p>
+            <p>A210</p>
+            <p>Kompyuter Arxitekturasi</p>
+
+
+          </span>
+            </div>
+            <div style="margin-top: 32.5%;" class="subject">
+          <span style="background-color:#637282; " class="sub">
+            <p>10:00</p>
+            <p>A210</p>
+            <p>Kompyuter Arxitekturasi</p>
+
+
+          </span>
+
+            </div>
+            <div class="subject">
+          <span style="background-color: #ffc107;" class="sub">
+            <p>10:00</p>
+            <p>A210</p>
+            <p>Kompyuter Tarmoqlari</p>
+
+
+          </span>
+                <span class="sub">
+            <p>11:30</p>
+            <p>A210</p>
+            <p>Kompyuter Arxitekturasi</p>
+
+</span>
+            </div>
+
+
+        </div>
+
+        <tr>
+            <th class="first_d"></th>
+            <th>dush</th>
+            <th>sesh</th>
+            <th>chor</th>
+            <th>paysh</th>
+            <th>juma</th>
+            <th>shan</th>
+
+        </tr>
+        <tr>
+            <td>08:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+        </tr>
+        <tr>
+            <td>09:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>10:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>11:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>12:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>13:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>20:00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+    </table>
+</div>
+
+</table>
+
+
+</body>
+<script>
+    const changer = (e) => {
+        e.style.backgroundColor = '#cccccc'
+
+
+    }
+
+</script>
+</html>

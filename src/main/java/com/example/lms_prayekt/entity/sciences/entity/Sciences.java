@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
+
 @Getter
 @Entity
 @AllArgsConstructor
@@ -24,10 +25,12 @@ public class Sciences {
     private int freeLesson;
     private int accumulatedpoints;
     private int percentageoftotalscore;
-     @OneToMany(mappedBy = "sciences",fetch = FetchType.LAZY)
-    private List<Teacher>teachers;
-    @OneToMany(mappedBy = "sciences",fetch = FetchType.LAZY)
-   private List<Lesson>lessons;
+
+    @OneToMany(mappedBy = "sciences", fetch = FetchType.LAZY)
+    private List<Teacher> teachers;
+
+    @OneToMany(mappedBy = "sciences", fetch = FetchType.LAZY)
+    private List<Lesson> lessons;
 
     public void setLessons(List<Lesson> lessons) {
         this.lessons = lessons;

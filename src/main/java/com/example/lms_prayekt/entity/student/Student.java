@@ -1,15 +1,14 @@
 package com.example.lms_prayekt.entity.student;
 
-import com.example.lms_prayekt.entity.lesson.entity.Lesson;
 import com.example.lms_prayekt.entity.teacher.Teacher;
 import com.example.lms_prayekt.type.Type;
 import com.example.lms_prayekt.entity.sciences.entity.Sciences;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -18,6 +17,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 public class Student {
     @Id
     private UUID id;
@@ -26,6 +26,9 @@ public class Student {
     private Type UserType;
     private String login;
     private String password;
+    private Integer mb;
+
+
 
     @ManyToMany
     @JoinTable(name = "student_sciences",
@@ -33,8 +36,13 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name = "sciences_id"))
     private List<Sciences> sciences;
 
+
     @ManyToMany(mappedBy = "students")
     private Set<Teacher> teachers;
+
+
+
+
 
 
 }

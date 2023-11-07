@@ -30,7 +30,8 @@ public class LoginController {
         for (Teacher teacher : repazitory.findAll()) {
             if (teacher.getLogin().equals(login))
             {
-                model.addAttribute(teacher);
+                model.addAttribute("teacher",teacher);
+
                 return new ModelAndView("Teacher",model.asMap());
             }
         }
@@ -40,7 +41,8 @@ public class LoginController {
          sciences = byLogin.getSciences();
         model.addAttribute(sciences);
         findLoginTeacher(login);
-        return new ModelAndView("Dars",model.asMap());}
+        return new ModelAndView("Dars",model.asMap());
+        }
         else if (byLogin==null ) {
             Admin byLogin1 = adminrepozitary.findByLogin(login);
             model.addAttribute(byLogin1);
@@ -93,5 +95,10 @@ public class LoginController {
     {
         model.addAttribute(sciences);
         return new ModelAndView("TableDars",model.asMap());
+    }
+    @GetMapping()
+    public ModelAndView gerBack()
+    {
+        return new ModelAndView("Teacher");
     }
 }

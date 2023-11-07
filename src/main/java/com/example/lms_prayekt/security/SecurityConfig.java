@@ -24,10 +24,14 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         registry -> registry
-                                .requestMatchers("register/amaliyot","register/jadval","/TableOfDars","/register/loginParol",
-                                        "/lesson","/admin/{id}",
-                                        "/{id}","Admin","Time"
-                                        ,"/login", "/Sciences","/Dars","/register","/student")
+                                .requestMatchers("register/amaliyot", "register/jadval", "/TableOfDars",
+                                        "/register/loginParol", "/lesson",
+                                        "/admin/{id}", "/{id}", "Admin", "Time"
+                                        , "/login", "/Sciences", "/Dars", "/register", "/student"
+                                        , "/teacher/fanlarim", "/teacher/davomat"
+                                        , "/teacher/update/{id}", "/teacher/davomat",
+                                        "/teacher/file","/teacher/meningFanlarim")
+
                                 .permitAll()
                                 .requestMatchers("/car").hasAuthority("car:read")
                                 .anyRequest().authenticated()

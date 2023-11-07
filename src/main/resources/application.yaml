@@ -3,6 +3,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/sardor
     password: sardor2003
     username: postgres
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -10,3 +11,10 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
+
+        mvc:
+          hidden-method:
+            filter:
+              enabled: true
+
+

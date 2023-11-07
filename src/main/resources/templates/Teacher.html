@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h1>Hello teacher</h1>
+
+<!--<a th:text="${teacher.getFullname()}"></a>-->
+
+<form action="/teacher/fanlarim" method="get">
+    <button>Fanlarim</button>
+</form>
+
+
+<form action="/teacher/davomat" method="get">
+    <button>Davomat</button>
+</form>
+
+<form action="/teacher/meningFanlarim" method="get">
+    <button>Mening fanlarim</button>
+</form>
+
+
+
+
+<form th:action="@{/teacher/file}" th:method="post" enctype="multipart/form-data">
+    <input  name="file" type="file">
+    <button type="submit">Joylash</button>
+</form>
+
+
+
 </body>
 </html>
+
+
+
+<!--<form action="/teacher/file" method="get">-->
+<!--    <button>Vazifa yuklash</button>-->
+<!--</form>-->

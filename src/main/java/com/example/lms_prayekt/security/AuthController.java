@@ -19,4 +19,7 @@ public class AuthController {
         return "/login";
     }
 
+    public StudentRepazitory getRepazitory() {
+        return repazitory;
+    }
 }

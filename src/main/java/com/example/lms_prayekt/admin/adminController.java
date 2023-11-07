@@ -21,32 +21,34 @@ import java.util.UUID;
 @RequestMapping("/admin")
 @RequiredArgsConstructor
 public class adminController {
+
     private final TeacherRepazitory repozitary;
     private final SciencesRepazitory sciencesRepazitory;
     private final LessonRepozitary lessonRepozitary;
     static UUID uuid;
+
     @GetMapping
-public ModelAndView getAll(Model model)
-    {
+    public ModelAndView getAll(Model model) {
         model.addAttribute(repozitary.findAll());
-        return new ModelAndView("lessonAdmin",model.asMap());
+        return new ModelAndView("lessonAdmin", model.asMap());
     }
+
     @PostMapping("/{id}")
-    public ModelAndView postLesson(@PathVariable("id") UUID id, Model model)
-    {
-      uuid=id;
+    public ModelAndView postLesson(@PathVariable("id") UUID id, Model model) {
+        uuid = id;
         Sciences sciences = sciencesRepazitory.findById(id).get();
         model.addAttribute(sciences);
-        return new ModelAndView("Time",model.asMap());
+        return new ModelAndView("Time", model.asMap());
     }
+
     @PostMapping
-    public ModelAndView postTimeLesson(@RequestParam("day")Integer day,
-    @RequestParam("hour")Integer hour,@RequestParam("minut")Integer minut)
-    {
+    public ModelAndView postTimeLesson(@RequestParam("day") Integer day,
+                                       @RequestParam("hour") Integer hour,
+                                       @RequestParam("minut") Integer minut) {
         System.out.println(day);
         Sciences sciences = sciencesRepazitory.findById(uuid).get();
         Lesson lesson = new Lesson(UUID.randomUUID(), hour, minut, sciences);
         lessonRepozitary.save(lesson);
-        return  new ModelAndView("Time");
+        return new ModelAndView("Time");
     }
 }

@@ -8,4 +8,7 @@ import java.util.UUID;
 @Repository
 public interface StudentRepazitory extends JpaRepository<Student, UUID> {
     Student getByLogin(String login);
+
+    Student getAllBy();
+
 }
